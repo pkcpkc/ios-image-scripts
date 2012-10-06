@@ -1,6 +1,6 @@
 if [ $# -ne 1 ]
 then
-	echo "Usage: tabbar-icon.sh <icon-40x40>"
+	echo "Usage: tabbar-icon.sh <icon-60x60>"
 	exit 1
 fi
 
@@ -12,5 +12,5 @@ icon=$iconPrefix".png"
 retinaIcon=$iconPrefix"@2x.png"
 
 echo "Generating tab bar icons."
-sips -s format png -z 40 40 $1 --out $retinaIcon
-sips -s format png -z 20 20 $1 --out $icon
+sips -s format png -z 60 60 $1 --out $retinaIcon
+sips -s format png -z 30 30 $1 --out $icon
