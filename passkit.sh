@@ -18,8 +18,8 @@ sips -s format png -z 30 572 $2 --out footer@2x.png
 echo "Generating icons."
 sips -s format png -z 29 29 $1 --out icon.png
 sips -s format png -z 58 58 $1 --out icon@2x.png
-sips -s format png -z 50 50 $1 --out icon-spot~ipad.png
-sips -s format png -z 100 100 $1 --out icon-spot@2x~ipad.png
+sips -s format png -z 50 50 $1 --out icon~ipad.png
+sips -s format png -z 100 100 $1 --out icon@2x~ipad.png
 
 echo "Generating logo."
 sips -s format png -z 50 160 $2 --out logo.png
