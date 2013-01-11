@@ -26,8 +26,8 @@ sips -s format png -z 50 160 $2 --out logo.png
 sips -s format png -z 100 320 $2 --out logo@2x.png
 
 echo "Generating thumbnail."
-sips -s format png -z 90 90 $2 --out logo.png
-sips -s format png -z 180 180 $2 --out logo@2x.png
+sips -s format png -z 90 90 $2 --out thumbnail.png
+sips -s format png -z 180 180 $2 --out thumbnail@2x.png
 
 echo "Generating strip images. Please choose and rename the required strip image to 'strip.png' and delete others."
 echo "Generating images for event tickets."
