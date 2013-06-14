@@ -1,7 +1,7 @@
-if [ $# -ne 3 ]
-then
-	echo "Usage: ipad.sh <icon-1024x1024> <launch-image-portrait-1536x2008> <launch-image-landscape-2048x1496>"
-	exit 1
+#check arguments only 1 or 3 are available
+if ( ($# -ne 1) && ($# -ne 3) ) then
+echo "Usage: ipad.sh <icon-1024x1024> [<launch-image-portrait-1536x2008>] [<launch-image-landscape-2048x1496>]"
+exit 1
 fi
 
 echo "Generating iPad icons."
@@ -17,8 +17,15 @@ sips -s format png -z 144 144 $1 --out Icon@2x~ipad.png
 sips -s format png -z 72 72 $1 --out Icon~ipad.png
 sips -s format png -z 1024 1024 $1 --out iTunesArtwork
 
+
+#only if 3 arguments
+if [ ($# -eq 3) ]
+then
+
 echo "Generating iPad launch images."
 sips -s format png -z 2008 1536 $2 --out Default@2x~ipad.png
 sips -s format png -z 1004 768 $2 --out Default~ipad.png
 sips -s format png -z 1496 2048 $3 --out Default-Landscape@2x~ipad.png
 sips -s format png -z 748 1024 $3 --out Default-Landscape~ipad.png
+
+fi
